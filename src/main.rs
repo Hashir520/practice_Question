@@ -49,20 +49,40 @@
 
 
 
-fn main() {
-    let s = String::from("Hello World");
-    let word = first_word(&s);
-    println!("The first word is: {}", word);
+// fn main() {
+//     let s = String::from("Hello World");
+//     let word = first_word(&s);
+//     println!("The first word is: {}", word);
+// }
+
+// fn first_word(s: &str) -> &str {
+//     let bytes = s.as_bytes();
+
+//     for (i, &item) in bytes.iter().enumerate() {
+//         if item == b' ' {
+//             return &s[0..i];
+//         }
+//     }
+
+//     &s[..] 
+// }
+
+
+
+// Senerio 3
+// Write a function that takes a temperature in Celsius and returns a String telling whether it’s cold, moderate, or hot.
+fn main () {
+let celsius =5;
+let weather = describe_temperature(celsius);
+println!("{}",weather);
 }
-
-fn first_word(s: &str) -> &str {
-    let bytes = s.as_bytes();
-
-    for (i, &item) in bytes.iter().enumerate() {
-        if item == b' ' {
-            return &s[0..i];
-        }
+fn describe_temperature(celsius: i32) -> String {
+    if (celsius < 10) {
+        "Weather is Cold".to_string()
+    }else if celsius > 10 && celsius < 25 {
+        "Weather is Moderate".to_string()
     }
-
-    &s[..] 
+    else {
+        "Weather is Hot".to_string()
+    }
 }
