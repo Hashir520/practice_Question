@@ -1,1 +1,1 @@
-C:\Users\Hashir\practice\target\debug\practice.exe: C:\Users\Hashir\practice\src\main.rs
+C:\Users\Hashir\practice_Question\target\debug\practice.exe: C:\Users\Hashir\practice_Question\src\main.rs

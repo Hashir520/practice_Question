@@ -4,40 +4,65 @@
 
 //  Create a Rectangle struct and implement a method that checks if it can hold another rectangle.
 
-struct Rectangle {
-    width : u32,
-    height: u32,
-}
+// struct Rectangle {
+//     width : u32,
+//     height: u32,
+// }
 
-impl Rectangle {
-    fn area(&self) -> u32 {
-        self.width * self.height
-    }
-}
+// impl Rectangle {
+//     fn area(&self) -> u32 {
+//         self.width * self.height
+//     }
+// }
 
-impl Rectangle {
-    fn can_hold (&self,  other: &Rectangle) -> bool{
-        self.width > other.width && self.height > other.height
-    }
+// impl Rectangle {
+//     fn can_hold (&self,  other: &Rectangle) -> bool{
+//         self.width > other.width && self.height > other.height
+//     }
     
-}
+// }
+// fn main() {
+// let rect1 = Rectangle{
+//     width : 60,
+//     height : 80,
+// };
+// let rect2 = Rectangle{
+//     width : 50,
+//     height : 70,
+// };
+
+
+// let rect3 = Rectangle{
+//     width : 30,
+//     height : 90,
+// };
+// println!("Can rect1 hold rect2? {}", rect1.can_hold(&rect2));
+
+// println!("Can rect1 hold rect2? {}", rect2.can_hold(&rect3));
+
+// }
+
+
+
+// Senerio 2
+// Problem: Write a function that takes a string slice and returns the first word in the string.
+
+
+
 fn main() {
-let rect1 = Rectangle{
-    width : 60,
-    height : 80,
-};
-let rect2 = Rectangle{
-    width : 50,
-    height : 70,
-};
+    let s = String::from("Hello World");
+    let word = first_word(&s);
+    println!("The first word is: {}", word);
+}
 
+fn first_word(s: &str) -> &str {
+    let bytes = s.as_bytes();
 
-let rect3 = Rectangle{
-    width : 30,
-    height : 90,
-};
-println!("Can rect1 hold rect2? {}", rect1.can_hold(&rect2));
+    for (i, &item) in bytes.iter().enumerate() {
+        if item == b' ' {
+            return &s[0..i];
+        }
+    }
 
-println!("Can rect1 hold rect2? {}", rect2.can_hold(&rect3));
-
+    &s[..] 
 }
